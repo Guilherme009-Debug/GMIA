@@ -1,7 +1,13 @@
+public class Pesquisa extends ProcessadorSolicitacao {
 
-public class Pesquisa {
-	public String executar(String assunto) {
-        return "Pesquisa simulada sobre: " + assunto;
+    private Conversa conversa;
+
+    public Pesquisa(Conversa conversa) {
+        this.conversa = conversa;
     }
 
+    @Override
+    public String executar(String termo) {
+        return conversa.buscar(termo);
+    }
 }
